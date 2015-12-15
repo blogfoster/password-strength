@@ -161,7 +161,7 @@ var checkPassword = function checkPassword(input) {
         return totalScore + rule(input);
     }, 0);
 
-    return score > 100 ? 100 : score;
+    return Math.min(Math.max(score, 0), 100);
 };
 
 upperCaseLetters = characterTest(upperCaseTest);

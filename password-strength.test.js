@@ -153,5 +153,9 @@ describe('PasswordStrength', () => {
         it('should check consecutive numbers', () => {
             expect(PasswordStrength.checkPassword('12345678910')).toEqual(9);
         });
+
+        it('should not produce negative results', () => {
+            expect(PasswordStrength.checkPassword('dddffggdd')).toEqual(0);
+        });
     });
 });
